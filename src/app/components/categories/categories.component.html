@@ -1,0 +1,10 @@
+<section class="p-4 my-3">
+    <div class="row g-4 ">
+        <div class="col-sm-6 col-md-4 col-lg-3 " *ngFor="let category of categoryDetails">
+            <div class="cursor-pointer" [routerLink]="['/subcategory' , category._id]">
+                <img [src]="category.image" [alt]="category.name" class="w-100" height="400">
+                <h3 class="text-center h6 py-2 fw-bold">{{category.name}}</h3>
+            </div>
+        </div>
+    </div>
+</section>

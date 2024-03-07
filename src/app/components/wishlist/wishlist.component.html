@@ -1,0 +1,32 @@
+<section class="my-2">
+    <div class="d-flex justify-content-between align-items-center">
+      <h3 class="py-3">Favourite products :</h3>
+    </div>
+    <div class="row g-4">
+        <div class="col-md-2" *ngFor="let product of products">
+            <div class="product px-3 cursor-pointer position-relative">
+                <span class=" cursor-pointer" (click)="addToWishlist(product._id)" *ngIf="!wishlistData.includes(product._id)"> 
+                    <i class="fa-regular fa-heart heart text-main"></i>
+                  </span>
+                  <span (click)="removeFromWishlist(product._id)" *ngIf="wishlistData.includes(product._id)"> 
+                    <i class="fa-solid fa-heart fav-heart text-main" ></i>   
+                  </span>
+             
+                <div [routerLink]="['/details' , product._id]">
+                    <img [src]="product.imageCover" [alt]="product?.title" class="w-100">
+                    <h3 class="h6">{{product?.category?.name}}</h3>
+                    <h4 class="h6">{{product.title | textSlice:2}}</h4>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <span>{{product.price | currency: 'EGP'}} </span>
+                        <span >
+                            <i class="fas fa-star rating-color"></i>
+                            {{product.ratingsAverage}}
+                        </span>
+                    </div>
+                </div>
+                <button class="btn-main w-100" (click)="addToCart(product._id)">Add to cart</button>
+
+            </div>
+        </div>
+    </div>
+</section>

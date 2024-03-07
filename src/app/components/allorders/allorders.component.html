@@ -1,0 +1,13 @@
+<h3 class="text-main">Shipping Details</h3>
+<section class="bg-main-light my-2 p-3 rounded-3  mx-auto">
+    <div>
+
+        <div class="row justify-content-between g-4">            
+            <div class="col-md-6 pb-3">Shipping details : {{orderData[0]?.shippingAddress.details}}</div>
+            <div class="col-md-6 pb-3">City : {{orderData[0]?.shippingAddress.city}}</div>
+            <div class="col-md-6 pb-3"> Phone :{{orderData[0]?.shippingAddress.phone}}</div>
+            <div class="col-md-6 pb-3"> Payment Method :{{orderData[0]?.paymentMethodType}}</div>
+            <div class="col-md-6 pb-3"> Shipping Price :{{orderData[0]?.shippingPrice}}</div>
+        </div>
+    </div>
+</section>
